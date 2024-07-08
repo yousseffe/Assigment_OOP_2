@@ -8,21 +8,27 @@ using System.Xml.Linq;
 
 namespace Assigment_OOP_2
 {
+    public enum SecurityLevel
+    {
+        Guest,
+        Secretary,
+        DBA,
+        SecurityOfficer
+    }
     internal class employees
     {
         #region Attributes
         
         private int id;
         private string name;
-        private int securityLevel;
+        private SecurityLevel securityLevel;
         private decimal salary;
-        private DateTime hireDate;
+        private HiringDate hireDate;
         private char gender;
 
         #endregion
 
         #region Properties
-
 
         public int Id
         {
@@ -46,13 +52,13 @@ namespace Assigment_OOP_2
             }
         }
 
-        public int SecurityLevel
+        public SecurityLevel SecurityLevel
         {
             get { return securityLevel; }
             set
             {
-                if (value < 1 || value > 5)
-                    throw new ArgumentException("Security level must be between 1 and 5.");
+                if (Enum.IsDefined(typeof(SecurityLevel) , value))
+                    throw new ArgumentException("Invalid Security Level");
                 securityLevel = value;
             }
         }
@@ -68,13 +74,17 @@ namespace Assigment_OOP_2
             }
         }
 
-        public DateTime HireDate
+        public HiringDate HireDate
         {
             get { return hireDate; }
             set
             {
-                if (value > DateTime.Now)
+                if (value.Year > DateTime.Now.Year ||
+                (value.Year == DateTime.Now.Year && value.Month > DateTime.Now.Month) ||
+                (value.Year == DateTime.Now.Year && value.Month == DateTime.Now.Month && value.Day > DateTime.Now.Day))
+                {
                     throw new ArgumentException("Hire date cannot be in the future.");
+                }
                 hireDate = value;
             }
         }
@@ -85,7 +95,7 @@ namespace Assigment_OOP_2
             set
             {
                 if (value != 'M' && value != 'F' && value != 'O')
-                    throw new ArgumentException("Gender must be 'M' for male, 'F' for female, or 'O' for other.");
+                    throw new ArgumentException("Gender must be 'M' for male, 'F' for female");
                 gender = value;
             }
         }
@@ -94,7 +104,7 @@ namespace Assigment_OOP_2
         
         #region Constructors
 
-        public Employee(int id, string name, int securityLevel, decimal salary, DateTime hireDate, char gender)
+        public employees(int id, string name, int securityLevel, decimal salary, DateTime hireDate, char gender)
         {
             Id = id;
             Name = name;
@@ -103,7 +113,6 @@ namespace Assigment_OOP_2
             HireDate = hireDate;
             Gender = gender;
         }
-
         #endregion
         
         #region Method
