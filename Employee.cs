@@ -15,7 +15,7 @@ namespace Assigment_OOP_2
         DBA,
         SecurityOfficer
     }
-    internal class employees
+    internal class Employee
     {
         #region Attributes
         
@@ -104,14 +104,14 @@ namespace Assigment_OOP_2
         
         #region Constructors
 
-        public employees(int id, string name, int securityLevel, decimal salary, DateTime hireDate, char gender)
+        public Employee(int id, string name, SecurityLevel securityLevel, decimal salary, HiringDate hireDate, char gender)
         {
-            Id = id;
-            Name = name;
-            SecurityLevel = securityLevel;
-            Salary = salary;
-            HireDate = hireDate;
-            Gender = gender;
+            this.id = id;
+            this.name = name;
+            this.securityLevel = securityLevel;
+            this.salary = salary;
+            this.hireDate = hireDate;
+            this.gender = gender;
         }
         #endregion
         

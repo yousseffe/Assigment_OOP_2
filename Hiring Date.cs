@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assigment_OOP_2
 {
-    internal class HiringDate
+    internal class HiringDate 
     {
         #region Attributes
         private int day;
@@ -47,8 +47,7 @@ namespace Assigment_OOP_2
                 if (value < 1 || value > DateTime.Now.Year)
                     throw new ArgumentException("Year must be a positive integer and not in the future.");
                 year = value;
-                if (day > DateTime.DaysInMonth(year, month))
-                    throw new ArgumentException("Invalid day for the given month and year.");
+                
             }
         }
         #endregion
