@@ -1,48 +1,40 @@
-﻿namespace Assigment_OOP_2
+﻿using Demo.Inheritance;
+
+namespace Demo
 {
     internal class Program
     {
-        static int boxingCount = 0;
-        static int unBoxingCount = 0;
-        static int CompareByHireDate(Employee employee1 , Employee employee2 )
-        {
-            boxingCount += 2;
-
-            unBoxingCount += 2;
-
-            int result = employee1.HireDate.Year.CompareTo(employee2.HireDate.Year);
-
-            if (result == 0)
-            {
-                result = employee1.HireDate.Month.CompareTo(employee2.HireDate.Month);
-            }
-
-            if (result == 0)
-            {
-                result = employee1.HireDate.Day.CompareTo(employee2.HireDate.Day);
-            }
-
-            return result;
-        }
         static void Main(string[] args)
         {
-            Employee[] EmpArr = new Employee[3];
+            PhoneBook phoneBook = new PhoneBook(3);
 
-            EmpArr[0] = new Employee(1, "Alice", SecurityLevel.DBA, 7000, new HiringDate(1, 1, 2020) , 'F');
-            EmpArr[1] = new Employee(2, "Bob", SecurityLevel.Guest, 5000, new HiringDate(15, 9, 2021), 'M');
-            EmpArr[2] = new Employee(3, "Charlie", SecurityLevel.SecurityOfficer, 9000, new HiringDate(24, 5, 2016), 'M');
-            foreach (var employee in EmpArr)
-            {
-                Console.WriteLine(employee);
-            }
-            Console.WriteLine(EmpArr[0].HireDate.Year.CompareTo(EmpArr[1].HireDate.Year));
-            Array.Sort(EmpArr , CompareByHireDate);
-            Console.WriteLine();
+            phoneBook.AddPerson(0, "Maha", 123);
+            phoneBook.AddPerson(1, "Omar", 456);
+            phoneBook.AddPerson(2, "Aya", 789);
 
-            foreach (var employee in EmpArr)
+            phoneBook.setNumber("Omar", 9999);
+            Console.WriteLine(phoneBook.GetNumber("Omar")); ;
+            //2
+            phoneBook["Omar"] = 123456;
+            Console.WriteLine(phoneBook["Omar"]);
+
+            for (int i = 0; i < phoneBook.Size; i++)
             {
-                Console.WriteLine(employee);
+                Console.WriteLine(phoneBook[i]);
             }
+
+            //3 
+
+            Car car ;
+            car = new Car(10 , "BMW" , 320);
+        
+            Parent parent = new Parent(1,2);
+            Console.WriteLine(parent.Product());
+            Console.WriteLine(parent);
+
+            Child child = new Child(1 , 2 , 3);
+            Console.WriteLine(child.Product());
+            Console.WriteLine(child);
         }
     }
 }

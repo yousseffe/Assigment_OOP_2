@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assigment_OOP_2", "Assigment_OOP_2.csproj", "{3E0BA837-3C60-49FD-BDDA-BBE2C10D7FB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assigment_OOP_2", "Assigment_OOP_2.csproj", "{3E0BA837-3C60-49FD-BDDA-BBE2C10D7FB4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo", "..\Demo\Demo.csproj", "{24D08CE6-DB87-46DB-956D-B6A5DCE88AE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{3E0BA837-3C60-49FD-BDDA-BBE2C10D7FB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E0BA837-3C60-49FD-BDDA-BBE2C10D7FB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E0BA837-3C60-49FD-BDDA-BBE2C10D7FB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24D08CE6-DB87-46DB-956D-B6A5DCE88AE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24D08CE6-DB87-46DB-956D-B6A5DCE88AE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24D08CE6-DB87-46DB-956D-B6A5DCE88AE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24D08CE6-DB87-46DB-956D-B6A5DCE88AE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
